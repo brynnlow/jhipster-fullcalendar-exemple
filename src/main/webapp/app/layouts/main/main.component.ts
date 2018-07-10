@@ -1,9 +1,6 @@
 import {AfterViewInit, Component, ElementRef, ViewChild} from '@angular/core';
 import { ActivatedRouteSnapshot} from '@angular/router';
-
-import * as jQuery from 'jquery';
-import 'fullcalendar';
-
+declare var $: any;
 @Component({
     selector: 'jhi-main',
     templateUrl: './main.component.html'
@@ -20,8 +17,8 @@ export class JhiMainComponent implements AfterViewInit {
         return title;
     }
     ngAfterViewInit(): void {
-        // console.log(fullCalendar);
-        // console.log()
-        jQuery(this.calendar.nativeElement).fullCalendar({});
+        console.log($(this.calendar.nativeElement));
+        // console.log(jQuery);
+        $(this.calendar.nativeElement).fullCalendar({});
     }
 }
